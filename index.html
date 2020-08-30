@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+		<link rel="shortcut icon" href="https://www.jewishmilford.com/favicon.ico" type="image/x-icon">
+		<meta name="description" content="">
+		
+		<title>HCW/Chabad High Holiday Signup</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat|Pacifico&amp;display=swap" rel="stylesheet">
+		<style>
+section{text-align:center;padding:100px 0 75px 0;background-position:50% 50%;background-repeat:no-repeat;background-size:cover;}
+td,th{text-align:center;}
+.hover{background-color:yellow!important}
+.selX{color:green;font-weight:bold}
+.checkSel{color:green;font-weight:bold}
+.confData{font-weight:bold;color:blue;}
+html,body,#preview{height:100%}
+.wrapper{height:100%;width:100%}
+.red{color:red;font-weight:bold}
+.message{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;width:100%;height:60%;bottom:0;display:block;text-align:center;position:absolute;//background-color:rgba(0,0,0,0.6);color:#000;padding:.5em}
+.confTitle{margin-top:1em}
+.bg-primary,.btn-primary,.btn-primary:active{background-color:#009!important;border-color:#009!important;color:#fff!important}
+#chooseMsg{text-align:center}
+.confBox{background-color:lightYellow;padding:1em}
+#conf{display:none}
+body{font-family:'Lexend Deca',sans-serif}
+.nb{background-color:#068A84;color:white}
+.nbrow{padding:.25rem}
+.bldg{width:4em;margin:1rem}
+.card{margin-bottom:1em;}
+@media (max-width:575.98px){.container{padding:3px!important}.adjX{margin:0.5rem 0 0.5rem 0;}.form-group{margin-bottom:0;}
+}
+input.error{border-color:red;}
+.list-group-item{text-align:left;}
+.list-group{margin:1em 0 1em 0;}
+.seatError{background-color:yellow!important;}
+.update{font-size:50%}
+//#stage1,#findingMember,.cantFind{display:none;}
+.table thead th,.table tbody td {
+  border-top: 1px solid #000!important;
+  border-bottom: 1px solid #000!important;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+}
+.form-control{background-color:lightYellow;}
+select.form-control{margin:0 auto;min-width:4rem;text-align:center;}
+
+		</style></head>
+		
+		<body>
+			
+			<div class="fixed-top nb">
+				<div class="container">
+					<div class="row nbrow">
+						<div class="col-lg-12 text-center">
+<span id="titlesMain">Hebrew Congregation of Woodmont/Chabad</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<section>
+				<div class="container" id="conf">
+					<div class="card"><div class="card-header">
+						<h4 class="text-left">Thanks for signing up for a HCW/Chabad High Holiday Service</h4>
+					</div>
+					<div class="card-body" id="conf-inner">
+						<h5 class="confTitle text-left">Your Info</h5>
+						<div class="row confBox" id="yourInfo"></div>
+						<h5 class="confTitle text-left">Your Services</h5>
+						<div class="row confBox"><table class="table table-responsive w-100 d-block d-md-table table-striped"><thead><tr><th>Day</th><th>Time</th><th>Service</th><th>Location</th><th>Type</th><th>Number</th></th></tr></thead><tbody id="yourSlot"></tbody></table>
+							</div>
+						<div class="row col-auto ">
+										If you need to cancel a previous reservation, please email us (rabbi@jewishmilford.com)</div>
+						</div><div class="card-footer">
+						<!-- Button trigger modal -->
+
+						View <button class="btn btn-primary" data-target="#modalGuidelines" data-toggle="modal" type="button">Guidelines</button> <!-- Button trigger modal -->
+						<button class="btn btn-primary" data-target="#modalDavening" data-toggle="modal" type="button">Davening</button>
+					</div></div></div>
+				
+					<div aria-hidden="true" aria-labelledby="modalGuidelinesTitle" class="modal fade" id="modalGuidelines" role="dialog" tabindex="-1">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="modalGuidelinesTitle">Guidelines</h5><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+								</div>
+								<div class="modal-body">
+									<div class="row">
+										<div class="col">
+											<ol class="list-group" id="guidelines">
+												
+											</ol>
+										</div>
+									</div>
+								</div>
+								<div class="modal-footer">
+									<button class="btn btn-secondary" data-dismiss="modal" type="button">Close</button>
+								</div>
+							</div>
+						</div>
+					</div>
+										
+					<div aria-hidden="true" aria-labelledby="modalGuidelinesTitle" class="modal fade" id="modalDavening" role="dialog" tabindex="-1">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="modalDaveningTitle">Davening</h5><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+								</div>
+								<div class="modal-body">
+									<div class="row">
+										<div class="col">
+											<ol class="list-group" id="davening">
+												
+											</ol>
+										</div>
+									</div>
+									</div>
+								<div class="modal-footer">
+									<button class="btn btn-secondary" data-dismiss="modal" type="button">Close</button>
+								</div>
+							</div>
+						</div>
+					</div>					
+	<div aria-hidden="true" aria-labelledby="modalGuidelinesTitle" class="modal fade" id="modalGuest" role="dialog" tabindex="-1">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="modalGuestTitle">Guest Ticket Info</h5><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+								</div>
+								<div class="modal-body">
+									<div class="row">
+										<div class="col">
+											<ol class="list-group" id="guest">
+												
+											</ol>
+										</div>
+									</div>
+									</div>
+								<div class="modal-footer">
+									<button class="btn btn-secondary" data-dismiss="modal" type="button">Close</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="container" id="stage1">
+						<form id="chooseService" onsubmit="handleFormSubmit(this)">
+							<div class="card"><div class="card-header"><div class="row "><div class="col-lg-12 col-md-12 col-sm-12">
+								<h4 >High Holidays 5781 Sign up</h4></div></div></div>
+								<div class="card-body">
+									
+									<!--Formbuilder Form-->
+									
+									<div class="form-row">
+										<div class="col-lg-12 col-md-12 col-sm-12 form-group">
+											<div class="form-row">
+												<div class="col-lg-6 col-md-6 col-sm-12 adjX">
+													<input class="form-control text-multiple" data-form-field="nameFirst" id="nameFirst" name="nameFirst" placeholder="First Name" required="required" type="text" value="">
+												</div>
+												<div class="col-lg-6 col-md-6 col-sm-12 adjX">
+													<input class="form-control text-multiple" data-form-field="nameLast" id="nameLast" name="nameLast" placeholder="Last Name" required="required" type="text" value="">
+												</div>
+											</div>
+										</div>
+										<div class="col-lg-12 col-md-12 col-sm-12 form-group">
+											<div class="form-row">
+												<div class="col-lg-6 col-md-6 col-sm-12 adjX">
+													<input class="form-control" data-form-field="emailAddress" id="emailAddress" name="emailAddress" placeholder="Email" required="required" type="email" value="">
+												</div>
+												<div class="col-lg-6 col-md-6 col-sm-12 adjX">
+													<input class="form-control" data-form-field="cellPhone" id="cellPhone" name="cellPhone" placeholder="Cell Phone" required="required" type="tel" value="">
+												</div>
+											
+												</div><div class="row mt-2">
+												
+											</div>
+										</div>
+									</div>
+									
+								</div>
+								
+								<div class="card-footer">
+									<!-- Button trigger modal -->
+									<div class="row">
+									<div class="col-lg-3 col-md-3 col-sm-12 p-2">View </div><div class="col-lg-3 col-md-3 col-sm-12 p-2"><button class="btn btn-primary" data-target="#modalGuidelines" data-toggle="modal" type="button">Guidelines</button> <!-- Button trigger modal -->
+									</div><div class="col-lg-3 col-md-3 col-sm-12 p-2"><button class="btn btn-primary" data-target="#modalDavening" data-toggle="modal" type="button">Davening</button>
+									</div><div class="col-lg-3 col-md-3 col-sm-12 p-2"><button class="btn btn-primary" data-target="#modalGuest" data-toggle="modal" type="button">Guest Ticket Info</button>
+									</div></div></div>
+							</div>
+							<div class="card" id="viewMinyan">
+								<h4 class="card-header">Choose the service you would like to attend and the number of seats required</h4>
+								<h5 id="errMsg" class="text-danger"></h5>
+								<div class="card-body">
+									
+									<div  class="form-row showMinyan">
+										<div class="col-lg-12 col-md-12 col-sm-12">
+											<div class="container" id="services">
+												
+											</div>
+										</div>
+									</div>
+									<div class="card-footer col-auto">
+									<!--<button class="btn btn-info sbmt" id="clrB" >Clear Selections</button></div>-->
+										<div class="mb-3 col-auto showMinyan">
+										If you need to cancel a previous reservation, please email us (rabbi@jewishmilford.com)</div>
+										<div class="col-auto showMinyan">
+											<button class="btn btn-primary sbmt" id="subB" type="submit">Submit</button>
+										</div></div>
+										</div></div>
+								
+										
+						</div>
+					</div>
+					<input type="hidden" name="FamilyID">
+					</form><!--Formbuilder Form-->
+		</div>
+					<div aria-hidden="true" aria-labelledby="modalMinyan" class="modal fade" id="modalMinyan" role="dialog" tabindex="-1">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								
+								<div class="modal-body">
+									<div class="wrapper">
+										<div class="text-center">
+											<a href="http://cas-stamford.org/" target="_blank"><img class="bldg" src="https://02f6b9f.netsolhost.com/assets/images/casletterhead-947x355-65.png"></a>
+											<h5 id="loadMsg">Processing your request</h5>
+											<div class="spinner-border" role="status" style="width: 3rem; height: 3rem;">
+												<span class="sr-only">Loading...</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+</section>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script>
+var urlProc = 'https://script.google.com/macros/s/AKfycbwxSam1dq8dnp4Ai5w4V53_V6gmpCdgMVXKNCg4wEH4AjVNfbE/exec?',available={},
+	finalEmail;
+
+function wrapConfInfo(a) {
+	return `<div class="text-left col-lg-12 col-md-12 col-sm-12">${a}</div>`;
+}
+
+function wrapConf(a) {
+	var h = ['holiday', 'time', 'service', 'location', 'ticket', 'number'];
+	var q = [];
+	h.forEach(z2 => {
+		q.push(`<td>${a[z2]}</td>`);
+	});
+	return '<tr>' + q.join('') + '</tr>';
+}
+
+function showTextConf(e) {
+	console.log(e);
+}
+
+function showConf(a) {
+	var s = '<div><b>Confirmation of your High Holiday Reservation</b></div>';
+	finalEmail = a.emailAddress;
+	$('#yourInfo').html(['nameFirst', 'nameLast', 'emailAddress', 'cellPhone'].map(z => {
+		var pl = $(`#${z}`).attr('placeholder');
+		s += `<div><i>${pl}</i> <b>${a[z]}</b></div>`;
+		return wrapConfInfo(`${pl}<span class="confData"> ${a[z]}</span>`);
+	}).join(''));
+	s += '<table><thead><tr><th>Day</th><th>Time</th><th>Service</th><th>Location</th><th>Type</th><th>Number</th></th></tr></thead><tbody>'
+	$('#yourSlot').html(a.slots.map(z => {
+		s += wrapConf(z);
+		return wrapConf(z);
+	}).join(''));
+	s += '</tbody></table>';
+	s += '<div>If you need to cancel a previous reservation, please email us (rabbi@jewishmilford.com)</div>';
+	s += `<div class="confM">${a.gCode} - ${a.FamilyID}</div>`;
+	$('#modalMinyan').modal('hide');
+	$('#conf').show();
+	$('#stage1').hide();
+	getD(urlProc + 'callback=showTextConf&step=furtherProc&address=' + finalEmail + '&n=', encodeURIComponent(s.trim()));
+}
+
+function preventFormSubmit() {
+	$.each($('form'), function() {
+		$(this).on('submit', function(event) {
+			event.preventDefault();
+		});
+	});
+}
+function testDate()
+{var x = new Date().toString().split(' ');
+return (x[1]==='Aug' && Number(x[2]) <24);}
+$(function() {$('#signupLimit').toggle(testDate());
+
+	preventFormSubmit();
+
+	$('#tryAgain,#findMe').on('click', function() {
+		findMe();
+	});
+	
+	
+	$('#member_Phone').on('keydown', function() {
+		$('#member_Email').attr('required', !(this.value.length > 0))
+	});
+	$('#member_Phone').on('keyup', function() {
+		$('#member_Email').attr('required', !(this.value.length > 0))
+	});
+
+	$.ajax({
+//		url: 'https://script.google.com/macros/s/AKfycbwRTiO7EQ9s3eJ6B60MgRSzoSASm01uCKAYWnjTqRdiaPHpC5g/exec?step=services',
+url:'https://script.google.com/macros/s/AKfycbwA58YETC3XTCKyRmzPvq7CHzmE3zH1uxdV12qWCbHxzhbh_UkO/exec?step=services',
+		method: "GET",
+		dataType: "json",
+		success: function(data) {
+			formServices(data);
+		}
+	});
+});
+
+
+
+function showText(e) {
+	var i;
+	for (i in e) {
+		e[i].forEach(z => {
+			$(`#${i}`).append(`<li class="list-group-item">${z}</li>`);
+		});
+	}
+}
+
+function formServices(a) {
+	var s = [];
+	showText(a.modal);
+	a.services.forEach(z => {
+		s.push('<div class="card">');
+		s.push(`<div class="card-header">${z.holiday} <span class="font-italic" style="font-size:0.9rem">${z.holidayNote}</span></div>`, '<div class="card-body"><table class="table table-responsive w-100 d-block d-md-table table-striped"><thead>', '<tr><th colspan="3">&nbsp;</th><th>Men</th><th>Women</th></tr>', '<tr><th>Time</th><th>Service</th><th>Location</th><th>Your Family</th><th>Your Family</th></tr>', '</thead><tbody>');
+		z.d.forEach(z2 => {
+			s.push(`<tr><td>${z2.time}</td><td>${z2.service}</td><td>${z2.location}</td>`);
+			['men-family', 'women-family', ].forEach(z3 => {
+				s.push(formSelect(z2, z3))
+			});
+			s.push('</tr>');
+		});
+		s.push('</tbody></table></div></div>')
+	});
+	$('#services').html(s.join(''));
+	var i;
+	$.each($('form#chooseService select'), function() {
+		var rem = Number($(this).attr('data-capacity')) - Number($(this).attr('data-signup'));
+		$(this).toggle(rem > 0);
+		available[$(this).attr('name').split('-')[0]]=rem;
+		$(this).addClass($(this).attr('name').split('-')[0]);
+		$(this).attr('title', `${rem} spots for ${$(this).attr('data-gender')} remaining`);
+		$(this).attr('data-toggle', 'tooltip');
+		for (i = 0; i <= Math.min(6, rem); i++) {
+			$(this).append(`<option value="${i.toString()}">${i.toString()}</option>`);
+		}
+		$(this).on('change', function() {
+			$('#errMsg').html('');
+			$('.seatError').removeClass('seatError');
+		});
+	});
+	$('[data-toggle="tooltip"]').tooltip();
+	$('.card-header').addClass('bg-primary text-white');
+	
+}
+
+function formSelect(b, c) {
+	return `<td><select class="form-control" data-signup="${b['signup_'+c.split('-')[0]]}" data-gender="${c.split('-')[0]}" data-capacity="${b['capacity_'+c.split('-')[0]]}" data-signup=${b['signup_'+c.split('-')[0]]} name="Z_${b.serviceID}_${c}"></select></td>`;
+}
+
+function scrollViewMinyan() {
+	$('html, body').animate({
+		scrollTop: $('#viewMinyan').offset().top - $('div.fixed-top').height(),
+	}, 500, 'linear');
+}
+
+function familyFound(e) {
+	if (e.q) {
+		$('input[name=FamilyID]').val(e.r.familyID);
+		
+		var rName = e.r.FullName.split(',');
+		$('#nameFirst').val(rName[1].trim());
+		$('#nameLast').val(rName[0].trim());
+		$('#' + ((e.r.name === 'email') ? 'emailAddress' : 'cellPhone')).val(e.r.value);
+		$('input[name=member][value=Yes]').attr('checked', true);
+		$('input[name=patron][value=Yes]').attr('checked', e.p.filter(z => {
+			return z.r;
+		}).length > 0);
+		if (e.r.name === 'email') {
+			$('#cellPhone').val(e.d.Family_P1_Mobile);
+		} else {
+			$('#emailAddress').val(e.d.Family_P1_EMail);
+		}
+	} else {
+		$('#findingMember').hide();
+		$('.cantFind').show();
+	}
+}
+
+
+function getD(url, b) {
+	$.ajax({
+		crossDomain: true,
+		url: url + (b),
+		method: "GET",
+		dataType: "jsonp"
+	});
+}
+
+function testCap(a) {
+	var i, b = {};
+	a.filter(z => {
+		return z.name.substring(0, 2) === 'Z_';
+	}).forEach(z => {
+		var t = z.name.split('-')[0];
+		if (!b[t]) {
+			b[t] = 0;
+		}
+		b[t] += Number(z.value);
+	});
+	var h=[];
+	for (i in b) {
+		if (b[i] > available[i]) {
+			h.push(i);
+			
+		}
+	}
+	h.forEach(z=>{$('.' + z).addClass('seatError');})
+	return h.length === 0;
+}
+function handleFormSubmit(formObject) {
+	var t = 0;
+	var f=$('form#chooseService').serializeArray().filter(z => {
+			return z.value !== "0"
+		});
+			var q = testCap(f);
+	$.each($('form#chooseService select'), function() {
+		t += Number(this.value);
+	})
+	if (q && (t > 0)) {
+		$('.sbmt').hide();
+		getD(urlProc + 'callback=showConf&step=procF&', f.map(z => {
+			return `${z.name}=${encodeURIComponent(z.value)}`
+		}).join('&').trim());
+		$('#modalMinyan').modal('show');
+		$('#loadMsg').html('Processing your request');
+	} else if (!q){$('#errMsg').html('Check the highlighted entries, you have requested more family + guest seats than are available!');
+		scrollViewMinyan();}
+		else{
+		$('#errMsg').html('Select a service!');
+		scrollViewMinyan()
+	}
+}
+	</script>
+	
+	</body>
+	</html>	
