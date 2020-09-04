@@ -58,8 +58,7 @@ select.form-control{margin:0 auto;min-width:4rem;text-align:center;}
 			<div class="fixed-top nb">
 				<div class="container">
 					<div class="row nbrow">
-						<div class="col-lg-12 text-center">
-<img class="img-fluid height-auto logo" src="https://chabadorg.clhosting.org/media/images/946/SICI9460645.png"/>
+						<div class="col-lg-12 text-center"><img class="img-fluid height-auto logo" src="https://chabadorg.clhosting.org/media/images/946/SICI9460645.png"/>
 <span id="titlesMain">Hebrew Congregation of Woodmont/Chabad</span>
 						</div>
 					</div>
@@ -82,7 +81,7 @@ select.form-control{margin:0 auto;min-width:4rem;text-align:center;}
 						<!-- Button trigger modal -->
 
 						View <button class="btn btn-primary" data-target="#modalGuidelines" data-toggle="modal" type="button">Guidelines</button> <!-- Button trigger modal -->
-						<button class="btn btn-primary" data-target="#modalDavening" data-toggle="modal" type="button">Davening</button>
+						<button class="btn btn-primary" data-target="#modalImportant" data-toggle="modal" type="button">Important</button>
 					</div></div></div>
 				
 					<div aria-hidden="true" aria-labelledby="modalGuidelinesTitle" class="modal fade" id="modalGuidelines" role="dialog" tabindex="-1">
@@ -107,16 +106,16 @@ select.form-control{margin:0 auto;min-width:4rem;text-align:center;}
 						</div>
 					</div>
 										
-					<div aria-hidden="true" aria-labelledby="modalGuidelinesTitle" class="modal fade" id="modalDavening" role="dialog" tabindex="-1">
+					<div aria-hidden="true" aria-labelledby="modalGuidelinesTitle" class="modal fade" id="modalImportant" role="dialog" tabindex="-1">
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
 								<div class="modal-header">
-									<h5 class="modal-title" id="modalDaveningTitle">Davening</h5><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+									<h5 class="modal-title" id="modalImportantTitle">Important</h5><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
 								</div>
 								<div class="modal-body">
 									<div class="row">
 										<div class="col">
-											<ol class="list-group" id="davening">
+											<ol class="list-group" id="important">
 												
 											</ol>
 										</div>
@@ -128,27 +127,7 @@ select.form-control{margin:0 auto;min-width:4rem;text-align:center;}
 							</div>
 						</div>
 					</div>					
-	<div aria-hidden="true" aria-labelledby="modalGuidelinesTitle" class="modal fade" id="modalGuest" role="dialog" tabindex="-1">
-						<div class="modal-dialog" role="document">
-							<div class="modal-content">
-								<div class="modal-header">
-									<h5 class="modal-title" id="modalGuestTitle">Guest Ticket Info</h5><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
-								</div>
-								<div class="modal-body">
-									<div class="row">
-										<div class="col">
-											<ol class="list-group" id="guest">
-												
-											</ol>
-										</div>
-									</div>
-									</div>
-								<div class="modal-footer">
-									<button class="btn btn-secondary" data-dismiss="modal" type="button">Close</button>
-								</div>
-							</div>
-						</div>
-					</div>
+
 					<div class="container" id="stage1">
 						<form id="chooseService" onsubmit="handleFormSubmit(this)">
 							<div class="card"><div class="card-header"><div class="row "><div class="col-lg-12 col-md-12 col-sm-12">
@@ -188,9 +167,8 @@ select.form-control{margin:0 auto;min-width:4rem;text-align:center;}
 								<div class="card-footer">
 									<!-- Button trigger modal -->
 									<div class="row">
-									<div class="col-lg-3 col-md-3 col-sm-12 p-2">View </div><div class="col-lg-3 col-md-3 col-sm-12 p-2"><button class="btn btn-primary" data-target="#modalGuidelines" data-toggle="modal" type="button">Guidelines</button> <!-- Button trigger modal -->
-									</div><div class="col-lg-3 col-md-3 col-sm-12 p-2"><button class="btn btn-primary" data-target="#modalDavening" data-toggle="modal" type="button">Davening</button>
-									</div><div class="col-lg-3 col-md-3 col-sm-12 p-2"><button class="btn btn-primary" data-target="#modalGuest" data-toggle="modal" type="button">Guest Ticket Info</button>
+									<div class="col-lg-4 col-md-4 col-sm-12 p-2">View </div><div class="col-lg-4 col-md-4 col-sm-12 p-2"><button class="btn btn-danger" data-target="#modalImportant" data-toggle="modal" type="button">Important!</button>
+									</div><div class="col-lg-3 col-md-3 col-sm-12 p-2"><button class="btn btn-primary" data-target="#modalGuidelines" data-toggle="modal" type="button">Guidelines</button> <!-- Button trigger modal -->
 									</div></div></div>
 							</div>
 							<div class="card" id="viewMinyan">
@@ -227,7 +205,7 @@ select.form-control{margin:0 auto;min-width:4rem;text-align:center;}
 								<div class="modal-body">
 									<div class="wrapper">
 										<div class="text-center">
-											<a href="http://cas-stamford.org/" target="_blank"><img class="bldg" src="https://02f6b9f.netsolhost.com/assets/images/casletterhead-947x355-65.png"></a>
+											<a href="https://www.jewishmilford.com/" target="_blank"><img class="bldg" src="https://sites.google.com/a/jewishmilford.com/test/logo.jpg"></a>
 											<h5 id="loadMsg">Processing your request</h5>
 											<div class="spinner-border" role="status" style="width: 3rem; height: 3rem;">
 												<span class="sr-only">Loading...</span>
@@ -276,6 +254,7 @@ function showConf(a) {
 	}).join(''));
 	s += '<table><thead><tr><th>Day</th><th>Time</th><th>Service</th><th>Location</th><th>Type</th><th>Number</th></th></tr></thead><tbody>'
 	$('#yourSlot').html(a.slots.map(z => {
+	z.ticket = z.ticket.split('-')[0].trim();
 		s += wrapConf(z);
 		return wrapConf(z);
 	}).join(''));
@@ -341,10 +320,10 @@ function formServices(a) {
 	showText(a.modal);
 	a.services.forEach(z => {
 		s.push('<div class="card">');
-		s.push(`<div class="card-header">${z.holiday} <span class="font-italic" style="font-size:0.9rem">${z.holidayNote}</span></div>`, '<div class="card-body"><table class="table table-responsive w-100 d-block d-md-table table-striped"><thead>', '<tr><th colspan="3">&nbsp;</th><th>Men</th><th>Women</th></tr>', '<tr><th>Time</th><th>Service</th><th>Location</th><th>Your Family</th><th>Your Family</th></tr>', '</thead><tbody>');
+		s.push(`<div class="card-header">${z.holiday} <span class="font-italic" style="font-size:0.9rem">${z.holidayNote}</span></div>`, '<div class="card-body"><table class="table table-responsive w-100 d-block d-md-table table-striped"><thead>',  '<tr><th>Time</th><th>Service</th><th>Location</th><th>Men</th><th>Women</th><th>Family</th></tr>', '</thead><tbody>');
 		z.d.forEach(z2 => {
 			s.push(`<tr><td>${z2.time}</td><td>${z2.service}</td><td>${z2.location}</td>`);
-			['men-family', 'women-family', ].forEach(z3 => {
+			['men-family', 'women-family','family-family' ].forEach(z3 => {
 				s.push(formSelect(z2, z3))
 			});
 			s.push('</tr>');
