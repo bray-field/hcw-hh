@@ -265,6 +265,7 @@ function showConf(a) {
 	$('#conf').show();
 	$('#stage1').hide();
 	getD(urlProc + 'callback=showTextConf&step=furtherProc&address=' + finalEmail + '&n=', encodeURIComponent(s.trim()));
+	$("html,body").scrollTop();
 }
 
 function preventFormSubmit() {
@@ -349,7 +350,7 @@ function formServices(a) {
 	});
 	$('[data-toggle="tooltip"]').tooltip();
 	$('.card-header').addClass('bg-primary text-white');
-	
+	$("html,body").scrollTop();
 }
 
 function formSelect(b, c) {
@@ -425,7 +426,7 @@ function handleFormSubmit(formObject) {
 	$.each($('form#chooseService select'), function() {
 		t += Number(this.value);
 	})
-	if (q && (t > 0)) {
+	if (q && (t > 0)) {$("html,body").scrollTop();
 		$('.sbmt').hide();
 		getD(urlProc + 'callback=showConf&step=procF&', f.map(z => {
 			return `${z.name}=${encodeURIComponent(z.value)}`
